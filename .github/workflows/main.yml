@@ -13,5 +13,5 @@ jobs:
               run: echo "Publicação da Relase final"
     CD:
       needs: [CI]
-      uses: fsv-aula/repo-reaproveitavel/.github/workflows/cd.yml@main
+      uses: fsv-aula/repo-deploy/.github/workflows/deploy.yml@main
       secrets: inherit
