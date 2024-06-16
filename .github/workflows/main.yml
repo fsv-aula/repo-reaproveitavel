@@ -10,7 +10,13 @@ jobs:
             - name: Execução de Testes de Software
               run: echo "Aqui eu executo o teste de software"
             - name: Publicando a Release
-              run: ech "Publicação da Relase final"
+              run: echo "Publicação da Relase final"
+            - name: Adicionando mensagens de Log
+              run: |
+                echo "::debug:: Mensagem de Log Debug"
+                echo "::warning:: Mensagem de Log Warning" 
+                echo "::notice:: Mensagem de Log Notice" 
+                echo "::error:: Mensagem de Log Error"
     CD:
       needs: [CI]
       uses: fsv-aula/repo-deploy/.github/workflows/deploy.yml@main
