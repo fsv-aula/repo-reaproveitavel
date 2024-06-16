@@ -10,7 +10,7 @@ jobs:
             - name: Execução de Testes de Software
               run: echo "Aqui eu executo o teste de software"
             - name: Publicando a Release
-              run: echo "Publicação da Relase final"
+              run: ech "Publicação da Relase final"
     CD:
       needs: [CI]
       uses: fsv-aula/repo-deploy/.github/workflows/deploy.yml@main
