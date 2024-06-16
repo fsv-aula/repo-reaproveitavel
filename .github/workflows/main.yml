@@ -4,6 +4,8 @@ on:
 jobs:
     CI:
         runs-on: ubuntu-latest
+        env:
+          USER_NAME: "FABRICIO VERONEZ"
         steps:
             - name: Build de Imagem Docker
               run: echo "Execução do comando de docker build"
@@ -11,6 +13,9 @@ jobs:
               run: echo "Aqui eu executo o teste de software"
             - name: Publicando a Release
               run: echo "Publicação da Relase final"
+            - run: |
+                echo "::add-mask:: $USER_NAME"
+            - run: echo "USER_ID is $USER_NAME"
             - name: Adicionando mensagens de Log
               run: |
                 echo "::debug:: Mensagem de Log Debug"
