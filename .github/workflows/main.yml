@@ -22,6 +22,15 @@ jobs:
                 echo "::warning:: Mensagem de Log Warning" 
                 echo "::notice:: Mensagem de Log Notice" 
                 echo "::error:: Mensagem de Log Error"
+            - name: Agrupamento de Logs
+              run: | 
+                echo "::group:: Grupo de logs"
+                echo "Informação xpto do job 01" 
+                echo "Informação xpto do job 02" 
+                echo "Informação xpto do job 03" 
+                echo "Esse job foi executado por ${{ github.actor }}"
+                echo "::endgroup::"
+              
     CD:
       needs: [CI]
       uses: fsv-aula/repo-deploy/.github/workflows/deploy.yml@main
